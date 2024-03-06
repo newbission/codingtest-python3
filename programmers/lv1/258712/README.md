@@ -64,11 +64,11 @@ def solution(friends, gifts):
 
             # 주고 받은 선물 수가 같다면 선물지수 비교
             if gift_list[i][j] == gift_list[j][i]:
-                result[i] += total_gift_score[i] total_gift_score[j]
-                result[j] += total_gift_score[j] total_gift_score[i]
+                result[i] += total_gift_score[i] > total_gift_score[j]
+                result[j] += total_gift_score[j] > total_gift_score[i]
 
             # 더 많이 준 사람이 받기
-            elif gift_list[i][j] gift_list[j][i]:
+            elif gift_list[i][j] > gift_list[j][i]:
                 result[i] += 1
             else:
                 result[j] += 1
